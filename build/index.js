@@ -1,4 +1,37 @@
 "use strict";
+// Potência
+const numeroPotencia = document.getElementById('numeroPotencia');
+const elevadoPotencia = document.getElementById('elevadoPotencia');
+const buttonPotencia = document.getElementById('buttonPotencia');
+const resultPotencia = document.getElementById('resultPotencia');
+function atualizarResultadoPotencia(valor) {
+    resultPotencia.textContent = `Resultado: ${valor}`;
+}
+function potencia({ num1, num2 }) {
+    return Math.pow(num1, num2);
+}
+buttonPotencia.addEventListener('click', function () {
+    const resultado = potencia({
+        num1: Number(numeroPotencia.value),
+        num2: Number(elevadoPotencia.value)
+    });
+    atualizarResultadoPotencia(resultado);
+});
+// Raiz Quadrada
+const resultadoRaiz = document.getElementById('resultRaiz');
+const raizQuadrada = document.getElementById('numRaizQuadrada');
+const fazerCalucloRaiz = document.getElementById('raizQuadrada');
+function atualizarResultadoRaiz(valor) {
+    resultadoRaiz.textContent = `Resultado: ${valor}`;
+}
+function fazerRaizQuadrada(numero) {
+    return Math.sqrt(numero);
+}
+fazerCalucloRaiz.addEventListener('click', function () {
+    const resultado = fazerRaizQuadrada(Number(raizQuadrada.value));
+    atualizarResultadoRaiz(resultado);
+});
+// Soma, Subtração, Divisão, Multiplicação.
 const valor1 = document.getElementById('num1');
 const valor2 = document.getElementById('num2');
 const somar = document.getElementById('somar');
